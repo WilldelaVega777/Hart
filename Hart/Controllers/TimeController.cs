@@ -2,7 +2,7 @@
 // Imports Section
 //--------------------------------------------------------------------------
 using Microsoft.AspNetCore.Mvc;
-using Hart.Services;
+using Hart.Contracts.Services;
 
 
 //--------------------------------------------------------------------------
@@ -14,20 +14,20 @@ namespace Hart.Controllers
     // Class Section
     //----------------------------------------------------------------------
     [ApiController]
-    [Route("[controller]")]
+    [Route("api/[controller]")]
     public class TimeController : ControllerBase
     {
         //------------------------------------------------------------------
         // Private Fields Section
         //------------------------------------------------------------------
-        private readonly LoggerManager _logger;
+        private readonly ILoggerManager _logger;
 
 
         //------------------------------------------------------------------
         // Constructor Method Section
         //------------------------------------------------------------------
         public TimeController(
-            LoggerManager logger
+            ILoggerManager logger
         )
         {
             _logger = logger;
@@ -37,10 +37,10 @@ namespace Hart.Controllers
         //------------------------------------------------------------------
         // Controller Methods Section
         //------------------------------------------------------------------
-        [HttpGet]
-        public IActionResult Get()
+        [HttpGet(Name = "start")]
+        public IActionResult Start()
         {
-            return Ok(new DateTime());
+            return Ok(DateTime.Now.ToString());
         }
     }
 }

@@ -1,10 +1,16 @@
+//--------------------------------------------------------------------------
+// Imports Section
+//--------------------------------------------------------------------------
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';
+import { NgModule }           from '@angular/core';
+import { HttpClientModule }   from '@angular/common/http';
 
-import { AppComponent } from './app.component';
-import { CountdownComponent } from './countdown/countdown.component';
+import { AppComponent }       from './components/app/app.component';
+import { CountdownComponent } from './components/countdown/countdown.component';
 
+//--------------------------------------------------------------------------
+// Module Definition Section
+//--------------------------------------------------------------------------
 @NgModule({
   declarations: [
     AppComponent,
@@ -17,4 +23,7 @@ import { CountdownComponent } from './countdown/countdown.component';
   providers: [],
   bootstrap: [AppComponent]
 })
+//--------------------------------------------------------------------------
+// Module Class Section
+//--------------------------------------------------------------------------
 export class AppModule { }

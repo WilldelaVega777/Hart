@@ -24,3 +24,4 @@ namespace Hart.Contracts.Repositories
         IProductRepository Product { get; }
     }
 }
+     

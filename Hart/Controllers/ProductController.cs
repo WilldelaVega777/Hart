@@ -4,7 +4,7 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Hart.Contracts.Services;
-using Hart.Data.Repositories;
+using Hart.Contracts.Repositories;
 
 
 //--------------------------------------------------------------------------
@@ -23,15 +23,15 @@ namespace Hart.Controllers
         // Private Fields Section
         //------------------------------------------------------------------
         private readonly ILoggerManager _logger;
-        private readonly RepositoryManager _repository;
+        private readonly IRepositoryManager _repository;
 
 
         //------------------------------------------------------------------
         // Constructor Method Section
         //------------------------------------------------------------------
         public ProductController(
-            ILoggerManager logger,
-            RepositoryManager repository
+            IRepositoryManager repository,
+            ILoggerManager logger
         )
         {
             _logger = logger;

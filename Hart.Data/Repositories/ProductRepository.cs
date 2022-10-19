@@ -38,7 +38,7 @@ namespace Hart.Data.Repositories
         public async Task<IEnumerable<Product>> GetAllProductsAsync(bool trackChanges)
         {
             return await base.FindAll(trackChanges)
-                .OrderBy(company => company.Description)
+                .OrderBy(product => product.Description)
                 .ToListAsync();
         }
     }

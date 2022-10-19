@@ -20,7 +20,7 @@ namespace Hart.Data.Repositories
         // Private Properties Section
         //------------------------------------------------------------------
         private RepositoryDataContext _repositoryContext;
-        private IProductRepository _productRepository;
+        private IProductRepository? _productRepository;
 
 
         //------------------------------------------------------------------
@@ -42,21 +42,10 @@ namespace Hart.Data.Repositories
         // Constructor Method Section
         //------------------------------------------------------------------
         public RepositoryManager(
-            RepositoryDataContext pRepositoryContext
+            RepositoryDataContext repositoryContext
         )
         {
-            _repositoryContext = pRepositoryContext;
-            _productRepository = new ProductRepository(_repositoryContext);
-        }
-
-        //------------------------------------------------------------------
-        public RepositoryManager(
-            RepositoryDataContext pRepositoryContext,
-            IProductRepository productRepository
-        )
-        {
-            _repositoryContext = pRepositoryContext;
-            _productRepository = productRepository;
+            _repositoryContext = repositoryContext;
         }
     }
 }

@@ -47,6 +47,5 @@ namespace Hart.Data.Repositories.Base
 
             return retVal;
         }
-
     }
 }

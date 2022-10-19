@@ -12,8 +12,9 @@ var builder = WebApplication.CreateBuilder(args);
 //--------------------------------------------------------------------------
 // Add services to the container
 //--------------------------------------------------------------------------
-builder.Services.AddControllersWithViews();
 builder.Services.ConfigureCors();
+builder.Services.AddControllersWithViews();
+builder.Services.AddAutoMapper(typeof(Program));
 builder.Services.ConfigureIISIntegration();
 builder.Services.ConfigureLogger();
 builder.Services.ConfigureConnectionString(builder.Configuration);
@@ -31,7 +32,7 @@ var app = builder.Build();
 //--------------------------------------------------------------------------
 if (!app.Environment.IsDevelopment())
 {
-
+    app.UseDeveloperExceptionPage();
 }
 
 app.UseRouting();
