@@ -35,6 +35,6 @@ export class TimerService
   //------------------------------------------------------------------------
   public getTime()
   {
-
+    const url: string = "time/start";
   }
 }
