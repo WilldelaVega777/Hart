@@ -34,7 +34,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Remove="ClientApp\src\app\services\timer.service.ts" />
+    <None Remove="ClientApp\src\app\ApiTime.model.ts" />
   </ItemGroup>
 
   <ItemGroup>
@@ -42,6 +42,10 @@
     <ProjectReference Include="..\Hart.Data\Hart.Data.csproj" />
     <ProjectReference Include="..\Hart.Entities\Hart.Entities.csproj" />
     <ProjectReference Include="..\Hart.Services\Hart.Services.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <TypeScriptCompile Include="ClientApp\src\app\models\ApiTime.model.ts" />
   </ItemGroup>
 
 
@@ -64,7 +68,7 @@
     <!-- Include the newly-built files in the publish output -->
     <ItemGroup>
       <DistFiles Include="$(SpaRoot)dist\**; $(SpaRoot)dist-server\**" />
-      <ResolvedFileToPublish Include="@(DistFiles-&gt;'%(FullPath)')" Exclude="@(ResolvedFileToPublish)">
+      <ResolvedFileToPublish Include="@(DistFiles->'%(FullPath)')" Exclude="@(ResolvedFileToPublish)">
         <RelativePath>wwwroot\%(RecursiveDir)%(FileName)%(Extension)</RelativePath>
         <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
         <ExcludeFromSingleFile>true</ExcludeFromSingleFile>

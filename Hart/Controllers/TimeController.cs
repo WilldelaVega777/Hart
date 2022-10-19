@@ -40,7 +40,8 @@ namespace Hart.Controllers
         [HttpGet(Name = "start")]
         public IActionResult Start()
         {
-            return Ok(DateTime.Now.ToString());
+            var retVal = new { time = DateTime.Now.ToString() };
+            return Ok( retVal );
         }
     }
 }

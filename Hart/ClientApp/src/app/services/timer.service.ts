@@ -3,6 +3,8 @@
 //--------------------------------------------------------------------------
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { IApiTime }   from '../models/ApiTime.model';
 
 
 //--------------------------------------------------------------------------
@@ -33,8 +35,9 @@ export class TimerService
   //------------------------------------------------------------------------
   // Public Methods Section
   //------------------------------------------------------------------------
-  public getTime()
+  public getTime(): Observable<IApiTime>
   {
-    const url: string = "time/start";
+    const url: string = `${this.urlBase}time/start`;
+    return this.httpInstance.get<IApiTime>(url);
   }
 }
