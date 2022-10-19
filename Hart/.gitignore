@@ -124,6 +124,7 @@ DocProject/Help/*.HxT
 DocProject/Help/*.HxC
 DocProject/Help/*.hhc
 DocProject/Help/*.hhk
+.DS_Store
 DocProject/Help/*.hhp
 DocProject/Help/Html2
 DocProject/Help/html
